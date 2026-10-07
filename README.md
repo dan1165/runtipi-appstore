@@ -20,7 +20,7 @@ It contains all the apps that are available for download on [Runtipi](https://gi
 
 > _Don't forget to read the [docs](https://runtipi.io/docs)_
 
-## Apps available (264)
+## Apps available (265)
 
 |                                   App                                   | Name                                                                         | Description                                                                                                                                                         |
 | :---------------------------------------------------------------------: | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -124,6 +124,7 @@ It contains all the apps that are available for download on [Runtipi](https://gi
 |        <img src="apps/homebridge/metadata/logo.jpg" width="32">         | [Home Bridge](https://github.com/homebridge/homebridge)                      | HomeKit support for the impatient.                                                                                                                                  |
 |         <img src="apps/homepage/metadata/logo.jpg" width="32">          | [Homepage](https://github.com/gethomepage/homepage)                          | A highly customizable homepage                                                                                                                                      |
 |           <img src="apps/homer/metadata/logo.jpg" width="32">           | [Homer](https://github.com/bastienwirtz/homer)                               | A very simple static homepage for your server                                                                                                                       |
+|         <img src="apps/hyperblur/metadata/logo.jpg" width="32">         | [Hyperblur](https://github.com/dan1165/hyperblur)                            | Open-source Tumblr frontend.                                                                                                                                        |
 |          <img src="apps/immich/metadata/logo.jpg" width="32">           | [Immich](https://github.com/immich-app/immich)                               | Photo and video backup solution directly from your mobile phone.                                                                                                    |
 |         <img src="apps/inspircd/metadata/logo.jpg" width="32">          | [Inspircd](https://github.com/inspircd/inspircd)                             | A modular C++ IRC server.                                                                                                                                           |
 |         <img src="apps/invidious/metadata/logo.jpg" width="32">         | [Invidious](https://github.com/iv-org/invidious)                             | An alternative front-end to YouTube                                                                                                                                 |

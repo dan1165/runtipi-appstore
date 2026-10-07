@@ -1,0 +1,31 @@
+{
+  "$schema": "../app-info-schema.json",
+  "name": "Hyperblur",
+  "available": true,
+  "exposable": true,
+  "dynamic_config": true,
+  "port": 8283,
+  "id": "hyperblur",
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": ["social"],
+  "description": "Hyperblur is an open-source alternative frontend to Tumblr written in Go. Browse blogs, tags, search and explore without an account, tracking or caching. It renders the full Tumblr Neue Post Format including text, images, videos, audio, polls and reblogs, and works without JavaScript. A single Go binary with every asset embedded.",
+  "short_desc": "Open-source Tumblr frontend.",
+  "author": "dan1165",
+  "source": "https://github.com/dan1165/hyperblur",
+  "website": "https://github.com/dan1165/hyperblur",
+  "form_fields": [
+    {
+      "type": "password",
+      "label": "Tumblr API token",
+      "hint": "Optional. Use your own Tumblr API token to open blogs that require logging in. Leave empty to use the bundled one.",
+      "required": false,
+      "env_variable": "HYPERBLUR_TUMBLR_API_TOKEN"
+    }
+  ],
+  "supported_architectures": ["arm64", "amd64"],
+  "created_at": 1791392785521,
+  "updated_at": 1791392785521,
+  "force_pull": true,
+  "min_tipi_version": "4.5.0"
+}

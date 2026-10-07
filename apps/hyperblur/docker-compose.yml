@@ -1,0 +1,39 @@
+version: "3.7"
+
+services:
+  hyperblur:
+    container_name: hyperblur
+    image: ghcr.io/dan1165/hyperblur:latest
+    ports:
+      - ${APP_PORT}:8000
+    environment:
+      HYPERBLUR_TUMBLR_API_TOKEN: ${HYPERBLUR_TUMBLR_API_TOKEN}
+    restart: unless-stopped
+    networks:
+      - tipi_main_network
+    labels:
+      # Main
+      traefik.enable: true
+      traefik.http.middlewares.hyperblur-web-redirect.redirectscheme.scheme: https
+      traefik.http.services.hyperblur.loadbalancer.server.port: 8000
+      # Web
+      traefik.http.routers.hyperblur-insecure.rule: Host(`${APP_DOMAIN}`)
+      traefik.http.routers.hyperblur-insecure.entrypoints: web
+      traefik.http.routers.hyperblur-insecure.service: hyperblur
+      traefik.http.routers.hyperblur-insecure.middlewares: hyperblur-web-redirect
+      # Websecure
+      traefik.http.routers.hyperblur.rule: Host(`${APP_DOMAIN}`)
+      traefik.http.routers.hyperblur.entrypoints: websecure
+      traefik.http.routers.hyperblur.service: hyperblur
+      traefik.http.routers.hyperblur.tls.certresolver: myresolver
+      # Local domain
+      traefik.http.routers.hyperblur-local-insecure.rule: Host(`hyperblur.${LOCAL_DOMAIN}`)
+      traefik.http.routers.hyperblur-local-insecure.entrypoints: web
+      traefik.http.routers.hyperblur-local-insecure.service: hyperblur
+      traefik.http.routers.hyperblur-local-insecure.middlewares: hyperblur-web-redirect
+      # Local domain secure
+      traefik.http.routers.hyperblur-local.rule: Host(`hyperblur.${LOCAL_DOMAIN}`)
+      traefik.http.routers.hyperblur-local.entrypoints: websecure
+      traefik.http.routers.hyperblur-local.service: hyperblur
+      traefik.http.routers.hyperblur-local.tls: true
+      runtipi.managed: true
